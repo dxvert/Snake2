@@ -33,11 +33,19 @@ namespace Snake2
         {
             if (direction == Direction.LEFT)
             {
-                x = x + offset;
+                x = x - offset;
             }
             else if(direction == Direction.RIGHT)
             {
-                x = x - offset;
+                x = x + offset;
+            }
+            else if(direction == Direction.UP)
+            {
+                y = y + offset;
+            }
+            else if(direction == Direction.DOWN)
+            {
+                y = y - offset;
             }
        
         }
@@ -47,5 +55,17 @@ namespace Snake2
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
+        public override string ToString()
+        {
+            return x + ", " + y + ", sym + ";
+        }
+            
     }
 }
