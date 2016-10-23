@@ -25,9 +25,9 @@ namespace Snake2
             lineUp.DrawLine();
             lineDown.DrawLine();
 
-            Point p = new Point(4, 5, '+');
-            p.Draw();
-
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.DrawLine();
 
             Console.ReadLine();
 
