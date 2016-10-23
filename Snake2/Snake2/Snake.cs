@@ -25,14 +25,15 @@ namespace Snake2
 
         public void Move()
         {
-            Point tail = pList.First();
-            pList.Remove(tail);
+                Point tail = pList.First();
+                pList.Remove(tail);
 
-            Point head = GetNextPoint();
-            pList.Add(head);
+                Point head = GetNextPoint();
+                pList.Add(head);
 
-            tail.Clear();
-            head.Draw();
+                tail.Clear();
+                head.Draw();
+            
         }
 
         public Point GetNextPoint()
@@ -42,5 +43,30 @@ namespace Snake2
             nextPoint.Move(1, direction);
             return nextPoint;
         }
-    }
-}
+
+        public void HandleKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+                direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
+        }
+                /*
+             if (key == ConsoleKey.LeftArrow && direction != Direction.RIGHT )
+            direction = Direction.LEFT;
+        else if (key == ConsoleKey.RightArrow && direction != Direction.LEFT)
+            direction = Direction.RIGHT;
+        else if (key == ConsoleKey.UpArrow && direction != Direction.DOWN)
+            direction = Direction.UP;
+        else if (key == ConsoleKey.DownArrow && direction != Direction.UP)
+            direction = Direction.DOWN;
+            */
+            }
+        }
+    
+
+
